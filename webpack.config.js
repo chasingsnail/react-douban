@@ -11,19 +11,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: "babel-loader",
       },
       {
         test: /\.scss/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ["style-loader", "css-loader?modules&localIdentName=[local]-[hash:base64:5]", "sass-loader"]
       }
     ]
   },
+  
   devServer: {
+    historyApiFallback: true,
     proxy: {
       "/api": {
         target: "https://api.douban.com/v2",
