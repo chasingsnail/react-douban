@@ -45,6 +45,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html"
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env.METHOD': JSON.stringify(process.env.METHOD)
+    }),
   ]
 };
