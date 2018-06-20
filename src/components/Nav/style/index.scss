@@ -25,17 +25,16 @@
     display: flex;
     align-items: center;
     padding: 15px 0 15px 0;
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #2a8ccb;
+      margin: 0 20px;
+    }
   }
   
   .globalNavItems a:hover {
     color: #e1e1e1;
-  }
-  
-  .title {
-    font-size: 30px;
-    font-weight: bold;
-    color: #2a8ccb;
-    margin: 0 20px;
   }
   
   .movieCateNavWrapper {

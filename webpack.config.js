@@ -2,11 +2,21 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 var proxy = require("http-proxy-middleware");
 
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js"
+  },
+  resolve: {
+    extensions: ['.js'],
+    alias: {
+      '@': resolve('src')
+    }
   },
   module: {
     rules: [
