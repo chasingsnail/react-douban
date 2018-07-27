@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-import { baseURL } from '../config/env';
+import { baseURL } from '../config/constants';
 
-export default async (url, data, method = 'get', config = {}, showMessage = true) => {
+export default async (url, data, method = 'get', showMessage = true) => {
   method = method.toLowerCase();
 
   const ajaxConfig = {
     url,
     method,
-    baseURL,
-    ...config
+    baseURL
   };
 
   if (['post', 'put', 'patch'].includes(ajaxConfig.method)) {
